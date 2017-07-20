@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="base.css" />
+		<script src="jquery.3.1.1.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.clearfix{
+				display: block;
+				clear: both;
+				content: '';
+			}
+			.container{
+				width: 370px;
+				padding:30px 20px;
+				background: #000;
+				opacity: 0.5;
+				margin-top: 100px;
+				margin-left: 50px;
+				color: white;
+			}
+			.one{
+				display: flex;
+				justify-content: space-between;
+				margin-top: 10px;
+			}
+			.left{
+				width: 298px;
+				border: 1px solid #000;
+				padding: 10px;
+				background: #fff;
+				height: 30px;
+				float: left;
+			}
+			.two{
+				position: relative;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+			.two p{
+				position: absolute;
+				top: 18px;
+				right: 60px;
+				color: #000;
+			}
+			.right{
+				float: right;
+				width: 50px;
+				height: 50px;
+				background: #fff;
+				text-align: center;
+				line-height: 50px;
+				margin-top: 1px;
+				cursor: pointer;
+			}
+			.right img{
+				width: 30%;
+			}
+			.list1{
+				width: 349px;
+				background: #fff;
+				color: #000;
+				padding: 0 10px;
+				top: 52px;
+				position: absolute;
+				display: none;
+				z-index: 1;
+			}
+			.list1 li{
+				padding: 5px 0;
+				cursor: pointer;
+			}
+			
+			
+			.right1{
+				float: right;
+				width: 50px;
+				height: 50px;
+				background: #fff;
+				text-align: center;
+				line-height: 50px;
+				margin-top: 1px;
+				cursor: pointer;
+			}
+			.right1 img{
+				width: 30%;
+			}
+			.list2{
+				width: 349px;
+				background: #fff;
+				color: #000;
+				padding: 0 10px;
+				top: 52px;
+				position: absolute;
+				display: none;
+				z-index: 1;
+			}
+			.list2 li{
+				padding: 5px 0;
+				cursor: pointer;
+			}
+			.left1{
+				width: 298px;
+				border: 1px solid #000;
+				padding: 10px;
+				background: #fff;
+				height: 30px;
+				float: left;
+			}
+			.three{
+				width: 370px;
+				height: 50px;
+				background: blue;
+				font-size: 20px;
+				text-align: center;
+				line-height: 50px;
+				margin-top: 20px;
+			}
+			.four{
+				width: 370px;
+				margin-top: 20px;
+				text-align: center;
+				color: #999;
+				padding-bottom: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>快速搜索消费贷款</h1>
+			<div class="one">
+				<p>货款金额：</p>
+				<p>不足一万可用小数表示</p>
+			</div>
+			<div class="two clearfix">
+				<input type="text" value="30"/ class="left">
+				<p>万元</p>
+				<div class="right">
+					<img src="direction.png" />
+				</div>
+				<ul class="list1">
+					<li>5万元</li>
+					<li>10万元</li>
+					<li>15万元</li>
+					<li>20万元</li>
+					<li>25万元</li>
+					<li>30万元</li>
+				</ul>
+			</div>
+			
+			
+			<div class="one">
+				<p>贷款期限：</p>
+				<p> </p>
+			</div>
+			<div class="two clearfix">
+				<input type="text" value="6"/ class="left1">
+				<p class="inner">个月</p>
+				<div class="right1">
+					<img src="direction.png" />
+				</div>
+				<ul class="list2">
+					<li>6个月</li>
+					<li>1年</li>
+					<li>18个月</li>
+					<li>2年</li>
+					<li>3年</li>
+					<li>5年</li>
+					<li>10年</li>
+				</ul>
+			</div>
+			
+			<div class="three">
+				搜索一下
+			</div>
+			
+			<p class="four">
+				9164种信贷产品  2000家银行  1403家小贷公司
+			</p>
+		</div>
+
+		<script>
+			$(function(){
+				$(".list1 li").mouseenter(function(){
+					$(this).css("background","#ccc")
+				})
+				$(".list1 li").mouseleave(function(){
+					$(this).css("background","#fff")
+				})
+				$(".list1 li").click(function(){
+					$(".left").val(parseFloat(this.innerText))
+					$(".list1").css("display","none")
+					$(".right img").css("transform","rotateX(0deg)")
+					return false;
+				})
+				$(".right").click(function(){
+					$(".list1").css("display","block")
+					$(".right img").css("transform","rotateX(180deg)")
+					return false;
+				})
+				$(".left").click(function(){
+					$(".list1").css("display","none")
+					$(".right img").css("transform","rotateX(0deg)")
+					return false;
+				})
+				$(".container").click(function(){
+					$(".list1").css("display","none")
+					$(".right img").css("transform","rotateX(0deg)")
+				})
+				
+				
+				
+				
+				$(".list2 li").mouseenter(function(){
+					$(this).css("background","#ccc")
+				})
+				$(".list2 li").mouseleave(function(){
+					$(this).css("background","#fff")
+				})
+				$(".list2 li").click(function(){
+					$(".left1").val(parseFloat(this.innerText))
+					$(".list2").css("display","none")
+					$(".right1 img").css("transform","rotateX(0deg)")
+					if(this.innerHTML.includes("年")){
+						$(".inner").html("年")
+					}else{
+						$(".inner").html("个月")
+					}
+					return false;
+				})
+				$(".right1").click(function(){
+					$(".list2").css("display","block")
+					$(".right1 img").css("transform","rotateX(180deg)")
+					return false;
+				})
+				$(".left1").click(function(){
+					$(".list2").css("display","none")
+					$(".right1 img").css("transform","rotateX(0deg)")
+					return false;
+				})
+				$(".container").click(function(){
+					$(".list2").css("display","none")
+					$(".right1 img").css("transform","rotateX(0deg)")
+				})
+			})
+		</script>
+	</body>
+</html>
